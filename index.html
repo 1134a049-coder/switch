@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>大亂鬥 Smash Pro —— Switch 任天堂明星大亂鬥新手即時教學與神招速查網</title>
+  <meta name="description" content="專為 Switch《任天堂明星大亂鬥 特別版》新手打造的即時教學與神招速查小抄。收錄 5 大通用必學神招、6 位推薦本命角色絕技、回場防摔死急救包與勝率翻倍手把設定。">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&family=Outfit:wght@600;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body class="panel-mode">
+
+  <!-- Navigation Header -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand" aria-label="大亂鬥教學首頁">
+        <div class="brand-logo-icon">
+          <!-- Smash Bros Symbol Crosshair SVG -->
+          <svg viewBox="0 0 100 100" width="30" height="30" aria-hidden="true">
+            <circle cx="50" cy="50" r="46" fill="none" stroke="#FF3C53" stroke-width="8"/>
+            <line x1="38" y1="4" x2="38" y2="96" stroke="#00C3E3" stroke-width="10"/>
+            <line x1="4" y1="62" x2="96" y2="62" stroke="#00C3E3" stroke-width="10"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>SMASH <span>PRO</span></h1>
+          <p>大亂鬥新手神招速查網</p>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links (由淺至深三階段排列) -->
+      <nav class="nav-links" id="navLinks">
+        <a href="#heroTopRules" class="nav-item active">玩法介紹</a>
+        <a href="#heroControlsOverview" class="nav-item">操作按鍵</a>
+        <a href="#heroSmashGuide" class="nav-item">猛擊擊飛</a>
+        <a href="#rulesSection" class="nav-item">規則</a>
+        <a href="#recoveryGuide" class="nav-item">回場</a>
+        <a href="#attackMastery" class="nav-item">A鍵普攻</a>
+        <a href="#universalMoves" class="nav-item">5大神招</a>
+        <a href="#charactersSection" class="nav-item">推薦角色</a>
+        <a href="#gamepadSimulator" class="nav-item">手把試按</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Quick Sub-nav Bar (手機專屬由淺至深導航) -->
+  <nav class="mobile-subnav-bar" id="mobileSubnav" aria-label="手機快速分類選單">
+    <div class="mobile-subnav-scroll">
+      <a href="#heroTopRules" class="subnav-pill active">📖 玩法介紹</a>
+      <a href="#heroControlsOverview" class="subnav-pill">🎮 按鍵圖示</a>
+      <a href="#heroSmashGuide" class="subnav-pill">💥 猛擊擊飛</a>
+      <a href="#rulesSection" class="subnav-pill">🟢 核心規則</a>
+      <a href="#recoveryGuide" class="subnav-pill">🪂 保命回場</a>
+      <a href="#attackMastery" class="subnav-pill">👊 A鍵普攻</a>
+      <a href="#universalMoves" class="subnav-pill">⚡ 5大神招</a>
+      <a href="#charactersSection" class="subnav-pill">⭐ 推薦角色</a>
+      <a href="#gamepadSimulator" class="subnav-pill">🕹️ 即時試按</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <main class="main-content">
+    <section class="hero-section" id="hero">
+      <div class="hero-glow red-glow"></div>
+      <div class="hero-glow blue-glow"></div>
+
+      <div class="hero-container">
+        <div class="split-panel active-panel" data-panel-id="heroTopRules">
+          <div class="hero-badge">
+          <span class="hero-dot"></span>
+          <span>Switch 任天堂大亂鬥 SSBU｜由淺至深新手攻略</span>
+        </div>
+
+        <h2 class="hero-title">
+          單支 Joy-Con 輕鬆遊玩！<br>
+          <span class="text-neon-red">3 分鐘上手</span> ＋ <span class="text-neon-blue">操作圖解小抄</span>
+        </h2>
+
+
+        <!-- Quick Search Bar -->
+        <div class="hero-search-wrapper">
+          <div class="hero-search-box">
+            <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="quickSearchInput" placeholder="搜尋急救：例「猛擊」、「回場」、「破防」、「卡比」、「受身」..." aria-label="搜尋教學與神招">
+            <button class="search-clear-btn" id="btnSearchClear" style="display:none;" type="button" aria-label="清除搜尋">✕</button>
+          </div>
+          <div class="search-tags">
+            <span class="tag-label">秒查：</span>
+            <button class="quick-tag-btn" data-query="猛擊">💥 怎麼猛擊</button>
+            <button class="quick-tag-btn" data-query="回場">🆘 回場防摔死</button>
+            <button class="quick-tag-btn" data-query="短跳">⚡ 短跳跳+A</button>
+            <button class="quick-tag-btn" data-query="受身">🧱 撞牆受身</button>
+            <button class="quick-tag-btn" data-query="卡比">⭐ 卡比無腦招</button>
+            <button class="quick-tag-btn" data-query="7級">🏋️ 15分特訓</button>
+          </div>
+        </div>
+
+        <!-- 最上方直接說明規則玩法：合併為同一個區塊「玩法介紹」 -->
+        <div class="hero-controls-panel hero-top-rules-panel" id="heroTopRules">
+          <div class="jc-bp-card-header">
+            <h3 class="jc-bp-card-title">玩法介紹</h3>
+            <span class="hero-controls-badge">核心規則與認知</span>
+          </div>
+
+          <div class="hero-top-rules-body">
+            <!-- 圖一：規則 1 % 數機制 -->
+            <div class="hero-rule-subblock">
+              <div class="rule-card-badge">規則 1 · 勝負核心</div>
+              <h4 class="rule-title">% 數越高越飛，掉出場才算輸</h4>
+              <p class="rule-text">被打中 % 數會上升；% 越高被打飛越遠，先轟出場外或讓對手回不來就獲勝。</p>
+
+              <div class="percent-gauge-container">
+                <div class="percent-stage-item low">
+                  <div class="percent-val">0% ~ 50%</div>
+                  <div class="percent-state-title">🟢 安全蹭傷期</div>
+                  <p class="percent-state-desc">多用跑攻與普攻快速疊高 % 數。</p>
+                </div>
+                <div class="percent-stage-item mid">
+                  <div class="percent-val">60% ~ 85%</div>
+                  <div class="percent-state-title">🟡 邊緣壓迫期</div>
+                  <p class="percent-state-desc">把對手逼出懸崖外準備收頭。</p>
+                </div>
+                <div class="percent-stage-item high">
+                  <div class="percent-val">90% ~ 130%+</div>
+                  <div class="percent-state-title">🔴 致命 KO 區</div>
+                  <p class="percent-state-desc">抓破綻用<strong>「同秒猛推＋A 猛擊」</strong>直接送出場！</p>
+                </div>
+              </div>
+
+              <details class="deep-drawer compact-drawer">
+                <summary>延伸說明：傳統格鬥遊戲 vs 大亂鬥核心差異</summary>
+                <div class="deep-drawer-body">
+                  <ul>
+                    <li><strong>血條 vs % 數：</strong>傳統格鬥扣完血歸零就結束；大亂鬥 % 數沒有上限，重點是把對方打出場外邊界（Blast Zone）。</li>
+                    <li><strong>0% 也可能贏：</strong>把對手逼出舞台外，只要他回場失誤摔落一樣直接算你得分！</li>
+                  </ul>
+                </div>
+              </details>
+            </div>
+
+            <!-- 子區塊二：核心認知 -->
+            <div class="hero-rule-subblock">
+              <div class="rule-card-badge">核心認知 · 玩法關鍵</div>
+              <h4 class="rule-title">按鍵簡單好上手，但「角色不會自動轉向」！</h4>
+              <div class="rule-contrast-grid">
+                <div class="rule-contrast-box easy">
+                  <span class="rule-contrast-tag">🟢 表面門檻</span>
+                  <h4>只要「搖桿上下左右 ＋ A／B」</h4>
+                  <p>沒有複雜搓招指令，單支 Joy-Con 三分鐘就能開玩。</p>
+                </div>
+                <div class="rule-contrast-box hard">
+                  <span class="rule-contrast-tag">🔴 實戰難度</span>
+                  <h4>多人亂鬥不會自動面對敵人</h4>
+                  <p>面朝左就只會往左打，必須手動推搖桿轉身瞄準。</p>
+                </div>
+              </div>
+              <details class="deep-drawer compact-drawer">
+                <summary>延伸說明：為什麼新手常對空氣揮拳？</summary>
+                <div class="deep-drawer-body">
+                  因為大亂鬥支援 2～8 人同時混戰，系統無法幫你決定要鎖定誰！當敵人跳到背後時，務必先輕推左搖桿轉面再按 A/B，切忌原地盲按。
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+        </div><!-- /.split-panel heroTopRules -->
+
+        <div class="split-panel" data-panel-id="heroControlsOverview">
+        <!-- 大區塊一：單獨區塊「操作圖示」（僅展示單支 Joy-Con 實體按鍵對照） -->
+        <div class="hero-controls-panel hero-diagram-block" id="heroControlsOverview">
+          <div class="jc-bp-card-header">
+            <h3 class="jc-bp-card-title">操作按鍵</h3>
+            <span class="hero-controls-badge">單支 Joy-Con</span>
+          </div>
+
+          <!-- Horizontal Single Joy-Con Physical Mapping Diagram (依附圖配置向右轉90度還原實機外型) -->
+          <div class="joycon-blueprint-card" aria-label="單支橫握 Joy-Con 按鍵配置對照圖">
+            <div class="jc-bp-top-row">
+              <div class="jc-bp-tag grab-tag">
+                <span class="jc-bp-pill purple">SL</span>
+                <span>抓住（抓投破防）</span>
+              </div>
+              <div class="jc-bp-tag unused-tag">
+                <span class="jc-bp-pill dim">L / ZL (R / ZR)</span>
+                <span>未設定</span>
+              </div>
+              <div class="jc-bp-tag shield-tag">
+                <span class="jc-bp-pill blue">SR</span>
+                <span>防護罩（防禦／閃避／受身）</span>
+              </div>
+            </div>
+
+            <div class="jc-bp-hardware-wrap">
+              <!-- Wrist Strap Cord (附圖二腕繩向左延伸) -->
+              <div class="jc-bp-cord" aria-hidden="true"></div>
+
+              <!-- Protruding Top Rail Bumpers (SL / SR 實體突出肩鍵) -->
+              <div class="jc-bp-shoulder-rail">
+                <button type="button" class="jc-bp-bumper sl" aria-label="SL 肩鍵：抓住（抓投破防）">
+                  <span class="bumper-key">SL</span>
+                  <span class="bumper-act">抓住</span>
+                </button>
+                <button type="button" class="jc-bp-bumper sr" aria-label="SR 肩鍵：防護罩（防禦／閃避／受身）">
+                  <span class="bumper-key">SR</span>
+                  <span class="bumper-act">防護罩</span>
+                </button>
+              </div>
+
+              <!-- Physical Joy-Con(R) + Strap Shell Rotated 90deg Clockwise -->
+              <div class="jc-bp-body">
+                <!-- Right Curved Shoulder Arc (R / ZR 弧形邊緣) -->
+                <div class="jc-bp-rzr-arc" aria-hidden="true"></div>
+
+                <div class="jc-bp-shell">
+                  <!-- Top Wrist Strap Rail Strip (腕帶滑軌頂條) -->
+                  <div class="jc-bp-strap-bar">
+                    <span class="jc-bp-strap-notch" aria-hidden="true"></span>
+                    <div class="jc-bp-center-meta">
+                      <div class="jc-bp-rail" aria-hidden="true">
+                        <span class="jc-rail-led"></span>
+                        <span class="jc-rail-led"></span>
+                        <span class="jc-rail-led"></span>
+                        <span class="jc-rail-led"></span>
+                      </div>
+                      <div class="jc-bp-mode-pill">橫握單手把模式</div>
+                    </div>
+                    <span class="jc-bp-strap-plus" aria-hidden="true">＋</span>
+                  </div>
+
+                  <!-- Main Faceplate: Left Stick + Home | Right Enlarged Diamond + Plus -->
+                  <div class="jc-bp-faceplate">
+                    <!-- Left Analog Stick Zone -->
+                    <div class="jc-bp-stick-zone">
+                      <div class="jc-bp-callout-red">上下左右</div>
+                      <button type="button" class="switch-stick-socket jc-bp-stick" aria-label="類比搖桿：移動、快跑、方向（壓下＋四鍵＝炫耀）">
+                        <span class="stick-base-ring"></span>
+                        <span class="stick-cap tilted-right">
+                          <span class="stick-cap-cross"></span>
+                        </span>
+                      </button>
+                      <div class="jc-bp-subnote">移動・快跑・方向<br>（壓下＋四鍵＝炫耀）</div>
+                      <span class="jc-bp-home-btn" aria-hidden="true" title="HOME 鍵">⌂</span>
+                    </div>
+
+                    <!-- Right Enlarged 4-Button Diamond Zone -->
+                    <div class="jc-bp-buttons-zone">
+                      <span class="jc-bp-plus-btn" aria-hidden="true">＋</span>
+                      <div class="jc-bp-diamond">
+                        <div class="jc-bp-node top">
+                          <button type="button" class="jc-dot-btn jump" aria-label="上鍵：跳躍">
+                            <span class="btn-glyph">▲</span>
+                            <span class="btn-act">跳躍</span>
+                          </button>
+                        </div>
+                        <div class="jc-bp-node left">
+                          <button type="button" class="jc-dot-btn jump" aria-label="左鍵：跳躍">
+                            <span class="btn-glyph">◀</span>
+                            <span class="btn-act">跳躍</span>
+                          </button>
+                        </div>
+                        <div class="jc-bp-node right highlight-a">
+                          <button type="button" class="jc-dot-btn atk" aria-label="右鍵 A：攻擊">
+                            <span class="btn-glyph">▶ A</span>
+                            <span class="btn-act">攻擊</span>
+                          </button>
+                        </div>
+                        <div class="jc-bp-node bottom highlight-b">
+                          <button type="button" class="jc-dot-btn sp" aria-label="下鍵 B：必殺">
+                            <span class="btn-glyph">▼ B</span>
+                            <span class="btn-act">必殺</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 大區塊二：獨立演示「左搖桿 + A 攻擊」與「左搖桿 + B 必殺」操作內容 -->
+        <div class="hero-controls-panel hero-ops-demo-block" id="heroOpsDemo">
+          <div class="jc-bp-card-header">
+            <h3 class="jc-bp-card-title">操作演示：搖桿 ＋ A／B 就夠玩</h3>
+            <span class="hero-controls-badge">基礎出招演示</span>
+          </div>
+
+          <div class="ops-intro-strip">
+            <div class="ops-intro-pill easy">
+              <span>🎮</span>
+              <span>新手只需學會<strong>「左搖桿 ＋ A／B」</strong>就夠開打。</span>
+            </div>
+            <div class="ops-intro-pill aim">
+              <span>🎯</span>
+              <span>多人混戰<strong>不會自動轉向</strong>，出手前先推搖桿對準敵人！</span>
+            </div>
+          </div>
+
+          <div class="ops-demo-grid">
+            <!-- 小區塊一：左搖桿 + A 攻擊 -->
+            <div class="ops-subcard ops-card-red">
+              <div class="ops-scope-title red">全角色通用</div>
+              <div class="ops-subcard-top">
+                <span class="ops-subcard-badge red">小區塊一</span>
+                <h4>左搖桿 ＋ A（攻擊）</h4>
+              </div>
+
+              <!-- 操作樣式視覺圖解 -->
+              <div class="ops-style-box" aria-label="左搖桿搭配 A 攻擊的操作方向樣式">
+                <div class="ops-style-label">操作樣式：先推方向 / 跑步 ＋ 點按 A</div>
+                <div class="ops-visual-row">
+                  <div class="ops-stick-schematic red-stick">
+                    <span class="stick-dir dir-up" title="上推：對空">↑ 上</span>
+                    <span class="stick-dir dir-left" title="左推：向左">←</span>
+                    <div class="stick-core-knob">搖桿</div>
+                    <span class="stick-dir dir-right active-dir" title="右推：前刺 / 衝刺">→</span>
+                    <span class="stick-dir dir-down" title="下推：下掃">↓ 下</span>
+                  </div>
+                  <span class="ops-plus-sign">＋</span>
+                  <div class="ops-key-badge red-key">
+                    <span class="key-big">A</span>
+                    <span class="key-sub">▶ 攻擊鍵</span>
+                  </div>
+                </div>
+                <div class="ops-stick-hint">輕推換角度・猛推到底滑步衝刺</div>
+              </div>
+
+              <ul class="ops-move-list">
+                <li><span class="ops-tag">不推 ＋ A</span> 原地快速連打</li>
+                <li><span class="ops-tag">輕推 ＋ A</span> 上挑／下掃／前揮（依方向變化）</li>
+                <li><span class="ops-tag">快跑 ＋ A</span> 滑步衝刺撞飛追擊</li>
+                <li><span class="ops-tag">空中 ＋ A</span> 配方向打出空中踢擊</li>
+              </ul>
+
+              <div class="gif-demo-box">
+                <div class="gif-demo-label">🎬 實機示範：原地平 A（不推搖桿 ＋ A）</div>
+                <img src="GIF/原地平A-GIF.gif" alt="原地平A 實機操作示範 GIF" class="gif-demo-img" loading="lazy" decoding="async">
+              </div>
+            </div>
+
+            <!-- 小區塊二：左搖桿 + B 必殺 -->
+            <div class="ops-subcard ops-card-blue">
+              <div class="ops-scope-title blue">全角色不同</div>
+              <div class="ops-subcard-top">
+                <span class="ops-subcard-badge blue">小區塊二</span>
+                <h4>左搖桿 ＋ B（必殺）</h4>
+              </div>
+
+              <!-- 操作樣式視覺圖解 -->
+              <div class="ops-style-box" aria-label="左搖桿搭配 B 必殺的操作方向樣式">
+                <div class="ops-style-label">操作樣式：撥定四方向 ＋ 點按 B</div>
+                <div class="ops-visual-row">
+                  <div class="ops-stick-schematic blue-stick">
+                    <span class="stick-dir dir-up active-dir" title="上推 ＋ B：救命回場">↑ 回場</span>
+                    <span class="stick-dir dir-left" title="橫推 ＋ B：突進或投擲">←</span>
+                    <div class="stick-core-knob">搖桿</div>
+                    <span class="stick-dir dir-right" title="橫推 ＋ B：突進或投擲">→</span>
+                    <span class="stick-dir dir-down" title="下推 ＋ B：反制特技">↓ 特技</span>
+                  </div>
+                  <span class="ops-plus-sign">＋</span>
+                  <div class="ops-key-badge blue-key">
+                    <span class="key-big">B</span>
+                    <span class="key-sub">▼ 必殺鍵</span>
+                  </div>
+                </div>
+                <div class="ops-stick-hint">四方向各有獨立招牌大招</div>
+              </div>
+
+              <ul class="ops-move-list">
+                <li><span class="ops-tag blue">不推 ＋ B</span> 角色專屬招牌技（集氣／射擊）</li>
+                <li><span class="ops-tag blue">←／→ ＋ B</span> 橫向突進或丟擲道具</li>
+                <li><span class="ops-tag gold">↑ 上推 ＋ B</span> <strong>場外救命回場技（必學！）</strong></li>
+                <li><span class="ops-tag blue">↓ 下推 ＋ B</span> 反擊、下壓或角色切換</li>
+              </ul>
+
+              <div class="gif-demo-box blue-accent">
+                <div class="gif-demo-label">🎬 實機示範：B 必殺技施放</div>
+                <img src="GIF/大招施放-GIF.gif" alt="大招施放 實機操作示範 GIF" class="gif-demo-img" loading="lazy" decoding="async">
+              </div>
+            </div>
+          </div>
+
+          <details class="deep-drawer">
+            <summary>💡 延伸問題：為什麼看懂 A / B 卻常常打不到敵人？</summary>
+            <div class="deep-drawer-body">
+              <ul>
+                <li><strong>大亂鬥不會自動轉身：</strong>不像傳統 1v1 格鬥遊戲會永遠面對對手，你面朝左按 A 就只會揮左邊；敵人在身後時記得先輕推搖桿轉向。</li>
+                <li><strong>輕推 vs 猛推差別：</strong>「先輕推搖桿不放再按 A」是強攻擊；只有「跑步狀態猛推＋A」才是滑步衝刺攻擊；想一擊打飛要看下方猛擊說明！</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+        </div><!-- /.split-panel heroControlsOverview -->
+
+        <div class="split-panel" data-panel-id="heroSmashGuide">
+        <!-- 大區塊三：如何擊飛敵人？（猛擊區塊 + Joy-Con 示圖 + 精簡步驟 + 延伸抽屜） -->
+        <div class="hero-controls-panel hero-smash-guide-block" id="heroSmashGuide">
+          <div class="jc-bp-card-header">
+            <h3 class="jc-bp-card-title">如何擊飛敵人？</h3>
+            <span class="hero-controls-badge smash-badge">KO 必殺：猛擊</span>
+          </div>
+
+          <!-- 猛擊專屬 Joy-Con 操作示圖 -->
+          <div class="smash-joycon-visual" aria-label="單支 Joy-Con 猛擊同秒雙按示意圖">
+            <div class="smash-jc-label-bar">
+              <span class="smash-jc-tag">🎮 猛擊 Joy-Con 操作示圖</span>
+              <span class="smash-jc-rule-line">左搖桿方向 ＋ A 必須<strong>同秒一起按下</strong>，分開按都算一般攻擊（只疊 %、飛不出去）</span>
+            </div>
+
+            <div class="smash-jc-deck">
+              <div class="smash-jc-left">
+                <div class="smash-jc-stick-pad" aria-hidden="true">
+                  <div class="smash-jc-stick-knob">➔</div>
+                </div>
+                <div class="smash-jc-stick-txt">
+                  <strong>左搖桿猛推到底</strong>
+                  <span>← / → / ↑ / ↓ 任一方向</span>
+                </div>
+              </div>
+
+              <div class="smash-jc-sync-pill">⚡ 同秒一起按下去 ⚡</div>
+
+              <div class="smash-jc-right">
+                <div class="smash-jc-diamond" aria-hidden="true">
+                  <span class="sjc-btn top">▲</span>
+                  <span class="sjc-btn left">◀</span>
+                  <span class="sjc-btn right active-a">A</span>
+                  <span class="sjc-btn bottom">B</span>
+                </div>
+                <div class="smash-jc-btn-txt">
+                  <strong>右鍵 A 同按</strong>
+                  <span>長按不放可蓄力</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 精簡 3 步驟 -->
+          <div class="smash-steps-grid">
+            <div class="smash-step-card">
+              <div class="smash-step-head">
+                <span class="smash-step-num">STEP 1</span>
+                <h4>先用普攻疊到 80%+</h4>
+              </div>
+              <p>先用一般攻擊（A / B）累積對手 % 數，越高越飛得遠。</p>
+            </div>
+
+            <div class="smash-step-card highlight-step">
+              <div class="smash-step-head">
+                <span class="smash-step-num gold">STEP 2</span>
+                <h4>搖桿＋A 同秒拍下</h4>
+              </div>
+              <p>左手指<strong>猛推方向</strong>與右手指<strong>按 A</strong> 必須<strong>同一瞬間一起按</strong>，閃光才算猛擊！</p>
+            </div>
+
+            <div class="smash-step-card">
+              <div class="smash-step-head">
+                <span class="smash-step-num blue">STEP 3</span>
+                <h4>點按秒打 / 長按蓄力</h4>
+              </div>
+              <p>秒放搶快；按住 A 蓄力再放開，高 % 數直接轟出場外！</p>
+            </div>
+          </div>
+
+          <!-- 蓄力猛擊實機示範 GIF -->
+          <div class="gif-demo-box gold-accent gif-demo-wide">
+            <div class="gif-demo-label">🎬 實機示範：蓄力猛擊（同秒猛推 ＋ 長按 A 蓄力轟飛）</div>
+            <img src="GIF/蓄力猛擊-GIF.gif" alt="蓄力猛擊 實機操作示範 GIF" class="gif-demo-img" loading="lazy" decoding="async">
+          </div>
+
+          <!-- 猛擊延伸問題摺疊抽屜 -->
+          <details class="deep-drawer">
+            <summary>❓ 延伸問答：按不出來總是變跑步／一般攻擊？覺得同按太難怎麼辦？</summary>
+            <div class="deep-drawer-body">
+              <ul>
+                <li><strong>最常見失誤：</strong>「先推搖桿 0.5 秒才按 A」只會變成一般攻擊或衝刺攻擊。請練習兩根手指<strong>同時拍桌子的節奏</strong>！</li>
+                <li><strong>懶人設定秘技：</strong>到遊戲「按鍵設定 → 其他設定」打開 <strong>「A＋B 猛擊」</strong>，之後只要推方向同時一起按 A＋B 就能更穩觸發（詳見下方設定區）。</li>
+                <li><strong>蓄力倍率限制：</strong>按住 A 不放最多可蓄力約 1 秒（傷害提升至 1.4 倍），蓄力途中被打斷會受更重擊飛，別太貪心！</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
+        <!-- 8 按鍵快速傳送門（摺疊收納，保持首屏精簡） -->
+        <div class="hero-controls-panel hero-quicklinks-block">
+          <details class="deep-drawer" style="margin-top: 0;">
+            <summary>🕹️ 進階速查：展開單支 Joy-Con 全部 8 顆按鍵功能傳送門</summary>
+            <div class="deep-drawer-body">
+              <div class="hero-controls-grid">
+                <a href="#attackMastery" class="da-step-card hero-ctrl-card">
+                  <div class="da-step-num">搖桿・上下左右</div>
+                  <div class="da-step-keys">
+                    <div class="switch-stick-socket jc-ring-red" aria-hidden="true">
+                      <div class="stick-base-ring"></div>
+                      <div class="stick-cap tilted-right"><div class="stick-cap-cross"></div></div>
+                      <span class="stick-dir-arrow">➔</span>
+                    </div>
+                  </div>
+                  <div class="da-step-desc">輕推慢走，<strong>猛推到底</strong>快跑。</div>
+                </a>
+
+                <a href="#attackMastery" class="da-step-card hero-ctrl-card">
+                  <div class="da-step-num">右鍵 ▶・A（攻擊）</div>
+                  <div class="da-step-keys">
+                    <div class="switch-four-pad" aria-hidden="true">
+                      <span class="pad-btn pad-x">跳</span><span class="pad-btn pad-y">跳</span><span class="pad-btn pad-b">B</span><span class="pad-btn pad-a active">A</span>
+                    </div>
+                  </div>
+                  <div class="da-step-desc">普攻出拳，快跑＋A＝<strong>衝刺攻擊</strong>。</div>
+                </a>
+
+                <a href="#recoveryGuide" class="da-step-card hero-ctrl-card">
+                  <div class="da-step-num">下鍵 ▼・B（必殺）</div>
+                  <div class="da-step-keys">
+                    <div class="switch-four-pad" aria-hidden="true">
+                      <span class="pad-btn pad-x">跳</span><span class="pad-btn pad-y">跳</span><span class="pad-btn pad-b active">B</span><span class="pad-btn pad-a">A</span>
+                    </div>
+                  </div>
+                  <div class="da-step-desc">使用多種技能攻擊敵人</div>
+                </a>
+
+                <a href="#recoveryGuide" class="da-step-card hero-ctrl-card">
+                  <div class="da-step-num">上／左鍵・跳躍</div>
+                  <div class="da-step-keys">
+                    <div class="switch-four-pad" aria-hidden="true">
+                      <span class="pad-btn pad-x active">跳</span><span class="pad-btn pad-y active">跳</span><span class="pad-btn pad-b">B</span><span class="pad-btn pad-a">A</span>
+                    </div>
+                  </div>
+                  <div class="da-step-desc">跳躍與二段跳；<strong>跳＋A 同按</strong>低空快攻。</div>
+                </a>
+
+                <a href="#universalMoves" class="da-step-card hero-ctrl-card">
+                  <div class="da-step-num">SL 肩鍵・抓住</div>
+                  <div class="da-step-keys">
+                    <div class="switch-shoulder-socket" aria-hidden="true">
+                      <span class="shoulder-pill active-purple">SL</span><span class="shoulder-pill dim">L/ZL 無</span>
+                    </div>
+                  </div>
+                  <div class="da-step-desc">近身破盾抓住敵人（專破防護罩）。</div>
+                </a>
+
+                <a href="#universalMoves" class="da-step-card hero-ctrl-card">
+                  <div class="da-step-num">SR 肩鍵・防護罩</div>
+                  <div class="da-step-keys">
+                    <div class="switch-shoulder-socket" aria-hidden="true">
+                      <span class="shoulder-pill active-blue">SR</span><span class="shoulder-pill dim">R/ZR 無</span>
+                    </div>
+                  </div>
+                  <div class="da-step-desc">開盾防禦；撞牆前按 <strong>SR 受身</strong>。</div>
+                </a>
+
+                <a href="#heroSmashGuide" class="da-step-card hero-ctrl-card">
+                  <div class="da-step-num">猛推＋A・猛擊 KO</div>
+                  <div class="da-step-keys">
+                    <div class="switch-combo-socket" aria-hidden="true">
+                      <span class="combo-mini-stick">➔</span><span class="combo-mini-plus">＋</span><span class="combo-mini-a">A</span>
+                    </div>
+                  </div>
+                  <div class="da-step-desc"><strong>同秒按下</strong>方向＋A 一發轟飛！</div>
+                </a>
+
+                <a href="#gamepadSimulator" class="da-step-card hero-ctrl-card">
+                  <div class="da-step-num">壓搖桿＋鍵・炫耀</div>
+                  <div class="da-step-keys">
+                    <div class="switch-combo-socket" aria-hidden="true">
+                      <span class="combo-mini-click">下壓</span><span class="combo-mini-plus">＋</span><span class="combo-mini-dpad">❖</span>
+                    </div>
+                  </div>
+                  <div class="da-step-desc">壓住搖桿不放＋四鍵擺挑釁動作。</div>
+                </a>
+              </div>
+            </div>
+          </details>
+        </div>
+
+        </div><!-- /.split-panel heroSmashGuide -->
+      </div>
+    </section>
+
+    <!-- STAGE 1 · Section 1: Core Mechanics (三角剋制與回場鐵則) -->
+    <section class="section-container split-panel" id="rulesSection" data-panel-id="rulesSection">
+      <div class="section-header">
+        <div class="section-tag-badge stage-lv1">STAGE 1 · 入門剋制與保命</div>
+        <h2 class="section-heading">攻・防・抓 三角剋制 &amp; 回場保命</h2>
+        <p class="section-subtitle">看懂上方「% 數與轉向規則」後，接著記住「攻・防・抓」與「↑＋B 回場」兩條實戰鐵則就能上場。</p>
+      </div>
+
+      <div class="rules-grid">
+        <!-- Rule 2: Rock Paper Scissors Triangle -->
+        <div class="rule-card">
+          <div class="rule-card-badge">規則 2</div>
+          <h3 class="rule-title">攻・防・抓 三角剋制法則</h3>
+          <p class="rule-text">遇到只會狂按盾或狂揮拳的對手，用剪刀石頭布剋制他：</p>
+          
+          <div class="triangle-container">
+            <div class="triangle-node node-attack">
+              <div class="node-icon">⚔️</div>
+              <div class="node-name">攻擊</div>
+              <div class="node-input"><span class="key-cap small btn-a">A</span> / <span class="key-cap small btn-b">B</span></div>
+              <div class="node-beats">打斷 ➜ 抓投</div>
+            </div>
+
+            <div class="triangle-arrow arrow-1">➜</div>
+
+            <div class="triangle-node node-shield">
+              <div class="node-icon">🛡️</div>
+              <div class="node-name">防禦</div>
+              <div class="node-input">長按 <span class="key-cap small btn-zr">SR</span></div>
+              <div class="node-beats">完擋 ➜ 攻擊</div>
+            </div>
+
+            <div class="triangle-arrow arrow-2">➜</div>
+
+            <div class="triangle-node node-grab">
+              <div class="node-icon">🤼</div>
+              <div class="node-name">抓住</div>
+              <div class="node-input"><span class="key-cap small btn-l">SL</span></div>
+              <div class="node-beats">無視 ➜ 防禦</div>
+            </div>
+          </div>
+
+          <div class="triangle-tip">
+            💡 口訣：「敵打我防 <span class="key-cap small btn-zr">SR</span>、敵龜我抓 <span class="key-cap small btn-l">SL</span>、敵抓我砍 <span class="key-cap small btn-a">A</span>」
+          </div>
+        </div>
+
+        <!-- Rule 3: Recovery Quick Survival Rule -->
+        <div class="rule-card">
+          <div class="rule-card-badge">保命鐵則</div>
+          <h3 class="rule-title">飛出場外快按「↑ ＋ B」回場</h3>
+          <p class="rule-text">被打飛出舞台別慌張！在空中還有二段跳與必殺技可以救自己回來：</p>
+          <div class="percent-gauge-container">
+            <div class="percent-stage-item low">
+              <div class="percent-val">第 1 步</div>
+              <div class="percent-state-title">🕹️ 搖桿朝舞台方向推</div>
+              <p class="percent-state-desc">先用空中二段跳（▲ / ◀）往舞台邊緣靠近。</p>
+            </div>
+            <div class="percent-stage-item mid">
+              <div class="percent-val">第 2 步</div>
+              <div class="percent-state-title">🪂 推「↑」＋ 按「B」</div>
+              <p class="percent-state-desc">施放上必殺技飛高，靠近懸崖邊緣會自動吸住！</p>
+            </div>
+          </div>
+          <details class="deep-drawer compact-drawer">
+            <summary>延伸說明：為什麼有時按了 ↑＋B 還是沒抓到懸崖？</summary>
+            <div class="deep-drawer-body">
+              部分角色的「↑＋B」只會往角色面對的方向飛，如果背對舞台施放會往反方向飛出去！往下看「STAGE 1 · 回場保命」有完整圖解步驟。
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- STAGE 1 · Section 2: Step-by-Step Recovery Tutorial -->
+    <section class="section-container split-panel" id="recoveryGuide" data-panel-id="recoveryGuide">
+      <div class="section-header">
+        <div class="section-tag-badge stage-lv1">STAGE 1 · 回場保命</div>
+        <h2 class="section-heading">被擊飛怎麼回場？三步保命流程</h2>
+        <p class="section-subtitle">新手 80% 死因是掉出場外回不來！點擊「自動演示」記住以下 3 步驟就能多撐兩條命。</p>
+      </div>
+
+      <div class="hero-controls-panel recovery-panel-match">
+        <!-- Visual Recovery Stage Diagram -->
+      <div class="recovery-stage-box">
+        <div class="recovery-stage-top">
+          <div class="rec-status-pill" id="recLiveStatus">
+            <span class="rec-step-badge" id="recStepBadge">STEP 1</span>
+            <span id="recStatusText">STEP 1｜搖桿朝向舞台 ＋ ⏴/⏶ 上跳：往舞台方向靠近！</span>
+          </div>
+          <button type="button" class="btn-play-recovery" id="btnPlayRecoveryDemo">
+            <span>▶ 自動演示回場三步驟</span>
+          </button>
+        </div>
+
+        <div class="recovery-canvas" id="recoveryCanvas">
+          <div class="rec-blast-zone">⚠️ 畫面外死亡邊界 (Blast Zone)</div>
+          <div class="rec-stage-platform">
+            <div class="rec-stage-top-grass"></div>
+            <div class="rec-stage-body">🏟️ 安全舞台 (Stage)</div>
+            <div class="rec-ledge-magnet" id="recLedgeMagnet" title="懸崖抓取磁吸點">
+              <span class="ledge-pulse-ring"></span>
+              🧲 懸崖
+            </div>
+            <div class="rec-stage-wall">🧱 牆壁 (撞牆前按 SR 受身)</div>
+          </div>
+          <svg class="rec-arc-svg" viewBox="0 0 1000 260" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M 760 172 Q 660 80 550 76 T 220 92" fill="none" stroke="rgba(56, 189, 248, 0.45)" stroke-width="3" stroke-dasharray="8 8" stroke-linecap="round"/>
+          </svg>
+          <button type="button" class="rec-path-dot dot-1 active" data-recstep="1" title="Step 1：1. 被擊飛">
+            <span class="rec-dot-num">1</span>
+            <span class="rec-dot-label">被擊飛</span>
+          </button>
+          <button type="button" class="rec-path-dot dot-2" data-recstep="2" title="Step 2：2. 大跳接近">
+            <span class="rec-dot-num">2</span>
+            <span class="rec-dot-label">大跳接近</span>
+          </button>
+          <button type="button" class="rec-path-dot dot-3" data-recstep="3" title="Step 3：3. 回場反擊">
+            <span class="rec-dot-num">3</span>
+            <span class="rec-dot-label">回場反擊</span>
+          </button>
+          <div class="rec-fighter step-1" id="recFighter">⭐</div>
+        </div>
+      </div>
+
+      <!-- 3 Sequential Step Cards -->
+      <div class="recovery-steps-flow" id="recoveryStepsFlow">
+        <article class="rec-step-card active" data-recstep="1" id="recCard1">
+          <div class="rec-card-num">STEP 01</div>
+          <h3 class="rec-card-title">1.按下跳躍</h3>
+          <div class="rec-card-keys">
+            <span class="key-cap small stick">搖桿朝舞台</span>
+            <span class="combo-plus">＋</span>
+            <span class="key-cap small btn-jump">⏴/⏶跳躍</span>
+          </div>
+          <p class="rec-card-desc">搖桿朝舞台方向持續推到底，等接近懸崖外再按空中跳躍。</p>
+          <div class="rec-card-tip">🔥 別剛飛出就急著交掉跳躍！</div>
+        </article>
+
+        <article class="rec-step-card" data-recstep="2" id="recCard2">
+          <div class="rec-card-num">STEP 02</div>
+          <h3 class="rec-card-title">2.上衝回場</h3>
+          <div class="rec-card-keys">
+            <span class="key-cap small stick">▲ 推上</span>
+            <span class="combo-plus">＋</span>
+            <span class="key-cap small btn-b">🅱️ 下鍵必殺</span>
+          </div>
+          <p class="rec-card-desc">跳躍最高點按 <strong>↑ ＋ B</strong> 向上飛，靠近崖邊會自動磁吸抓住。</p>
+          <div class="rec-card-tip">🚨 放完 ↑＋B 會直接下墜，最後再用！</div>
+        </article>
+
+        <article class="rec-step-card" data-recstep="3" id="recCard3">
+          <div class="rec-card-num">STEP 03</div>
+          <h3 class="rec-card-title">抓崖後 4 選 1 上台</h3>
+          <div class="rec-card-keys">
+            <span class="key-cap small stick">推舞台</span>
+            <span class="key-cap small btn-zr">SR 滾</span>
+            <span class="key-cap small btn-a">A 揮</span>
+            <span class="key-cap small btn-jump">⏴/⏶跳躍</span>
+          </div>
+          <p class="rec-card-desc">抓崖時有無敵時間！輪流使用「直推 / SR翻滾 / A攻擊 / 跳起」上台。</p>
+          <div class="rec-card-tip">💡 不要每次都按同一個，才不會被抓破綻！</div>
+        </article>
+      </div>
+
+      <!-- 擊飛回場實機示範 GIF -->
+      <div class="gif-demo-box green-accent gif-demo-wide">
+        <div class="gif-demo-label">🎬 實機示範：被擊飛回場（二段跳 ＋ ↑＋B 抓懸崖）</div>
+        <img src="GIF/擊飛回場-大-GIF.gif" alt="擊飛回場 實機操作示範 GIF" class="gif-demo-img" loading="lazy" decoding="async">
+      </div>
+
+      <!-- Side-B Exception Collapsed in Drawer -->
+      <details class="deep-drawer" id="recExceptionBox">
+        <summary>⚡ 進階延伸：什麼時候可以用「橫必殺 (→＋B)」回場？哪些角色按了會摔死？</summary>
+        <div class="deep-drawer-body">
+          <div class="rec-exc-grid">
+            <div class="rec-exc-col good">
+              <div class="exc-col-title">✅ 例外可用：會向前衝刺的橫 B</div>
+              <p class="exc-col-desc">飛到極遠外海時，先按朝舞台橫 B 拉近距離，再接 STEP 01～03。</p>
+              <div class="exc-examples"><strong>代表：</strong>皮卡丘 (頭槌)、路易吉 (綠導彈)、福克斯/法爾科、艾克、索尼克。</div>
+            </div>
+            <div class="rec-exc-col warn">
+              <div class="exc-col-title">⛔ 切勿亂按：停在原地的橫 B</div>
+              <p class="exc-col-desc">多數角色在空中按橫 B 不會移動、還會多掉高度摔死，乖乖用 ↑+B 即可。</p>
+              <div class="exc-examples"><strong>代表：</strong>卡比 (鐵錘)、瑪利歐 (披風)、林克 (鏢)、庫巴 / 加儂多夫。</div>
+            </div>
+          </div>
+        </div>
+      </details>
+      </div>
+    </section>
+
+    <!-- STAGE 2 · Section 3: Attack Mastery Class -->
+    <section class="section-container split-panel" id="attackMastery" data-panel-id="attackMastery">
+      <div class="section-header">
+        <div class="section-tag-badge stage-lv2">STAGE 2 · A 鍵實戰</div>
+        <h2 class="section-heading">左搖桿 ＋ 🅰️ 鍵：普攻按法大全</h2>
+        <p class="section-subtitle">都按 A，為什麼招式不同？點擊下方羅盤方向，看「推法、速度與空中姿態」的出招變化。</p>
+      </div>
+
+      <!-- Crown Spotlight: Dash Attack -->
+      <div class="dash-attack-spotlight" id="dashAttackSpotlight">
+        <div class="da-badge-row">
+          <span class="da-crown-badge">👑 新手最好用第一神招</span>
+          <span class="da-rank-tag">快速貼近追擊</span>
+        </div>
+        
+        <div class="da-content-grid">
+          <div class="da-main-info">
+            <h3 class="da-title">衝刺攻擊（邊跑邊按 A）</h3>
+            <p class="da-lead">打不到人？<strong>先快跑過去再按 A</strong>，角色會向前滑步突進揮出重擊！</p>
+
+            <div class="da-combo-steps">
+              <div class="da-step-card">
+                <div class="da-step-num">STEP 1・快跑</div>
+                <div class="da-step-keys">
+                  <div class="switch-stick-socket" title="Switch 左手類比搖桿：朝對手猛推到底" id="stickStep1">
+                    <div class="stick-base-ring"></div>
+                    <div class="stick-cap tilted-right"><div class="stick-cap-cross"></div></div>
+                    <span class="stick-dir-arrow">➔</span>
+                  </div>
+                </div>
+                <div class="da-step-desc">左搖桿朝對手<strong>猛推到底</strong>跑步</div>
+              </div>
+
+              <div class="da-step-arrow">➜</div>
+
+              <div class="da-step-card">
+                <div class="da-step-num">STEP 2・按 A</div>
+                <div class="da-step-keys">
+                  <div class="switch-four-pad" title="Switch 右手四鍵：按下右側 A 鍵" id="padStep2A">
+                    <span class="pad-btn pad-x">X</span>
+                    <span class="pad-btn pad-y">Y</span>
+                    <span class="pad-btn pad-b">B</span>
+                    <span class="pad-btn pad-a active">A</span>
+                  </div>
+                </div>
+                <div class="da-step-desc">跑動中直接點按<strong>右鍵 A</strong></div>
+              </div>
+
+              <div class="da-step-arrow">➜</div>
+
+              <div class="da-step-card active">
+                <div class="da-step-num">RESULT・突進</div>
+                <div class="da-step-keys"><span class="da-result-icon">⚡</span></div>
+                <div class="da-step-desc"><strong>滑步撞擊！</strong>瞬間拉近距離</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="da-tactics-box">
+            <div class="da-tactics-header">💡 一句話實戰原則</div>
+            <p style="font-size:13.5px; color:#E2E8F0; line-height:1.6;">看到對手<strong>大招揮空或剛落地</strong>，馬上跑過去按 A 就能穩穩撞中蹭傷害！</p>
+            <details class="deep-drawer compact-drawer">
+              <summary>展開角色範例 ＆ 避坑提醒</summary>
+              <div class="deep-drawer-body">
+                <ul>
+                  <li><strong>代表神招：</strong>卡比旋轉火球、瑪利歐高速滑鏟、庫巴縮殼重裝衝撞。</li>
+                  <li><strong>避坑注意：</strong>對手若已長按 SR 舉盾等著，衝刺撞盾會被盾抓反擊，記得穿插 SL 抓住！</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <!-- 衝刺攻擊實機示範 GIF -->
+        <div class="gif-demo-box gif-demo-wide">
+          <div class="gif-demo-label">🎬 實機示範：衝刺攻擊（快跑 ＋ A 滑步突進）</div>
+          <img src="GIF/衝刺攻擊-GIF.gif" alt="衝刺攻擊 實機操作示範 GIF" class="gif-demo-img" loading="lazy" decoding="async">
+        </div>
+      </div>
+
+      <!-- Mode Switcher for Left Stick + A Explorer -->
+      <div class="attack-filter-bar" id="attackModeTabs" role="tablist">
+        <button class="attack-filter-btn active" data-atkmode="ground" type="button" role="tab">🥊 地面普攻 / 強攻擊 ＋ 🅰️</button>
+        <button class="attack-filter-btn" data-atkmode="smash" type="button" role="tab">💥 猛擊 Smash（猛推 ＋ 🅰️）</button>
+        <button class="attack-filter-btn" data-atkmode="air" type="button" role="tab">🪂 空中五大攻擊（空中 ＋ 🅰️）</button>
+      </div>
+
+      <!-- Interactive Left Stick + A Spatial Explorer -->
+      <div class="atk-explorer-deck" id="attackStickExplorer">
+        <div class="atk-stick-compass">
+          <div class="compass-guide-hint">👇 點擊方向看對應招式詳解</div>
+          <div class="compass-cross-grid">
+            <div class="compass-slot slot-up">
+              <button type="button" class="atk-dir-node" data-atkdir="up" id="atkNodeUp">
+                <span class="node-arrow">▲</span><span class="node-move-title">上強攻擊</span>
+              </button>
+            </div>
+            <div class="compass-mid-row">
+              <div class="compass-slot slot-left">
+                <button type="button" class="atk-dir-node" data-atkdir="left" id="atkNodeLeft">
+                  <span class="node-arrow">◀</span><span class="node-move-title">橫向強攻擊</span>
+                </button>
+              </div>
+              <div class="compass-stick-center">
+                <div class="atk-stick-well" id="atkStickWell"><div class="atk-stick-knob" id="atkStickKnob">🕹️</div></div>
+                <div class="atk-plus-a-tag">＋ <span class="key-cap small btn-a">🅰️</span></div>
+              </div>
+              <div class="compass-slot slot-right">
+                <button type="button" class="atk-dir-node" data-atkdir="right" id="atkNodeRight">
+                  <span class="node-arrow">▶</span><span class="node-move-title">衝刺攻擊</span>
+                </button>
+              </div>
+            </div>
+            <div class="compass-slot slot-down">
+              <button type="button" class="atk-dir-node" data-atkdir="down" id="atkNodeDown">
+                <span class="node-arrow">▼</span><span class="node-move-title">下強攻擊</span>
+              </button>
+            </div>
+          </div>
+          <div class="compass-neutral-row">
+            <button type="button" class="atk-dir-node neutral active" data-atkdir="center" id="atkNodeCenter">
+              <span class="node-arrow">⚪ 原地不推：</span><span class="node-move-title">原地連續刺拳 (Jab)</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="atk-detail-panel" id="atkDetailPanel">
+          <div class="atk-card-top">
+            <span class="atk-badge ground" id="atkDetailBadge">地面普攻</span>
+            <span class="atk-speed" id="atkDetailSpeed">發生最快・2~4幀</span>
+          </div>
+          <div class="atk-combo-display" id="atkDetailCombo">
+            <span class="key-cap small">原地 (不推搖桿)</span><span class="combo-plus">＋</span><span class="key-cap small btn-a">🅰️ 連點</span>
+          </div>
+          <h3 class="atk-detail-title" id="atkDetailTitle">原地連續刺拳 / 百烈拳 (Jab)</h3>
+          <p class="atk-detail-desc" id="atkDetailDesc">站在原地快速揮拳，全遊戲出招最快，近身防身首選！</p>
+          <div class="atk-tip" id="atkDetailTip">💡 <strong>實戰用法：</strong>近距離亂戰被逼近時連點 A 搶先手打斷對手。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STAGE 2 · Section 4: Top 5 Universal Moves -->
+    <section class="section-container split-panel" id="universalMoves" data-panel-id="universalMoves">
+      <div class="section-header">
+        <div class="section-tag-badge stage-lv2">STAGE 2 · 通用 5 大神招</div>
+        <h2 class="section-heading">全角色通用：5 大必學神招</h2>
+        <p class="section-subtitle">選誰都通用！先看按法與用途，細節步驟點卡片下方即可展開。</p>
+      </div>
+
+      <div class="moves-cards-grid">
+        <!-- Move 1: Up-B -->
+        <article class="move-card primary-border" id="moveCardRecovery">
+          <div class="move-header">
+            <span class="move-rank-tag gold">NO.1 保命</span>
+            <span class="move-type-pill">全角色通用</span>
+          </div>
+          <div class="move-title-row">
+            <h3 class="move-name">上必殺（↑＋B）</h3>
+            <div class="controller-combo">
+              <span class="key-cap stick">↑</span><span class="combo-plus">＋</span><span class="key-cap btn-b">🅱️</span>
+            </div>
+          </div>
+          <p class="move-summary"><strong>掉出場外保命專用：</strong>靠二段跳飛近舞台，按 ↑＋B 吸住懸崖！</p>
+          <details class="deep-drawer compact-drawer">
+            <summary>展開三步驟與防雷提醒</summary>
+            <div class="deep-drawer-body">
+              <ul>
+                <li><strong>步驟：</strong>1. 搖桿推向舞台 → 2. 空中二段跳（上/左）→ 3. 按 <strong>↑ ＋ B</strong> 磁吸抓崖。</li>
+                <li><strong>⚠️ 警告：</strong>用完上 B 會進入無防備自由落體，留著最後抓邊緣再用！</li>
+              </ul>
+            </div>
+          </details>
+        </article>
+
+        <!-- Move 2: Smash -->
+        <article class="move-card red-border" id="moveCardSmash">
+          <div class="move-header">
+            <span class="move-rank-tag red">NO.2 KO 終結</span>
+            <span class="move-type-pill">高 % 數收頭</span>
+          </div>
+          <div class="move-title-row">
+            <h3 class="move-name">猛擊 Smash（同秒猛推＋A）</h3>
+            <div class="controller-combo">
+              <span class="key-cap stick">猛推</span><span class="combo-plus">＋</span><span class="key-cap btn-a">🅰️ 同按</span>
+            </div>
+          </div>
+          <p class="move-summary"><strong>把高 % 對手轟出場外：</strong>方向與 A 同一秒一起拍下才會發光擊飛！</p>
+          <details class="deep-drawer compact-drawer">
+            <summary>展開蓄力訣竅與防雷提醒</summary>
+            <div class="deep-drawer-body">
+              <ul>
+                <li><strong>蓄力與捷徑：</strong>同按後按住 A 不放可蓄力（1.4 倍威）；也可開「A＋B 同按＝猛擊」。</li>
+                <li><strong>⚠️ 警告：</strong>猛擊破綻較大，等對手 80%+ 露出空檔再抓時機揮砍！</li>
+              </ul>
+            </div>
+          </details>
+        </article>
+
+        <!-- Move 3: Dash Attack -->
+        <article class="move-card blue-border" id="moveCardDash">
+          <div class="move-header">
+            <span class="move-rank-tag blue">NO.3 突進</span>
+            <span class="move-type-pill">貼近蹭傷</span>
+          </div>
+          <div class="move-title-row">
+            <h3 class="move-name">衝刺攻擊（快跑＋A）</h3>
+            <div class="controller-combo">
+              <span class="key-cap dash">快跑</span><span class="combo-plus">＋</span><span class="key-cap btn-a">🅰️</span>
+            </div>
+          </div>
+          <p class="move-summary"><strong>追人最快起手式：</strong>搖桿推到底跑起來直接按 A，滑步撞飛對手！</p>
+          <details class="deep-drawer compact-drawer">
+            <summary>展開戰術價值與好用代表</summary>
+            <div class="deep-drawer-body">
+              <ul>
+                <li><strong>追擊神用：</strong>覆蓋 1/3 個舞台距離，專打剛落地或技能落空對手。</li>
+                <li><strong>好用代表：</strong>卡比（火球衝撞）、皮卡丘（頭槌）、瑪利歐（滑鏟）。</li>
+              </ul>
+            </div>
+          </details>
+        </article>
+
+        <!-- Move 4: Shield Grab -->
+        <article class="move-card green-border" id="moveCardShieldGrab">
+          <div class="move-header">
+            <span class="move-rank-tag green">NO.4 防反</span>
+            <span class="move-type-pill">擋下反摔</span>
+          </div>
+          <div class="move-title-row">
+            <h3 class="move-name">盾抓（SR 擋＋按 A）</h3>
+            <div class="controller-combo">
+              <span class="key-cap btn-zr">SR</span><span class="combo-arrow">➜</span><span class="key-cap btn-a">🅰️</span>
+            </div>
+          </div>
+          <p class="move-summary"><strong>被貼身狂揍怎麼反打？</strong>長按 SR 擋住對面這招，立刻按 A 瞬間抓起來扔！</p>
+          <details class="deep-drawer compact-drawer">
+            <summary>展開反擊三步驟</summary>
+            <div class="deep-drawer-body">
+              <ul>
+                <li>1. 長按 <strong>SR</strong> 開護盾擋下攻擊 → 2. 按住 SR 直接點按 <strong>A</strong> 最快出手抓住 → 3. 推搖桿往場外甩！</li>
+              </ul>
+            </div>
+          </details>
+        </article>
+
+        <!-- Move 5: Grab -->
+        <article class="move-card purple-border" id="moveCardGrab">
+          <div class="move-header">
+            <span class="move-rank-tag purple">NO.5 破盾</span>
+            <span class="move-type-pill">克制防禦</span>
+          </div>
+          <div class="move-title-row">
+            <h3 class="move-name">抓住／抓投（SL＋方向）</h3>
+            <div class="controller-combo">
+              <span class="key-cap btn-l">SL</span><span class="combo-arrow">➜</span><span class="key-cap stick">摔方向</span>
+            </div>
+          </div>
+          <p class="move-summary"><strong>專治一直舉盾不放的對手：</strong>按 SL 直接無視防護罩抓起來摔！</p>
+          <details class="deep-drawer compact-drawer">
+            <summary>展開抓後追打技巧</summary>
+            <div class="deep-drawer-body">
+              <ul>
+                <li>抓住後可先連點兩下 <strong>A</strong> 補傷（膝擊），再立刻推搖桿朝舞台外扔出去製造擊殺機會。</li>
+              </ul>
+            </div>
+          </details>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- STAGE 2 · Section 5: 10 Best Beginner Characters -->
+    <section class="section-container split-panel" id="charactersSection" data-panel-id="charactersSection">
+      <div class="section-header">
+        <div class="section-tag-badge stage-lv2">STAGE 2 · 推薦角色</div>
+        <h2 class="section-heading">新手首選 10 大角色與神招</h2>
+        <p class="section-subtitle">剛開打推薦多段跳、霸體重裝或遠程角，點擊角色名直接看專屬主力技！</p>
+      </div>
+
+      <!-- Character Select Tabs -->
+      <div class="char-tabs-bar" id="charTabsBar" role="tablist">
+        <button class="char-tab-btn active" data-char="kirby" type="button" role="tab" id="tabKirby">
+          <span class="char-avatar">⭐</span><span class="char-tab-name">星之卡比 (Kirby)</span><span class="char-trait-pill">5段跳保命王</span>
+        </button>
+        <button class="char-tab-btn" data-char="bowser" type="button" role="tab" id="tabBowser">
+          <span class="char-avatar">🐢</span><span class="char-tab-name">庫巴 (Bowser)</span><span class="char-trait-pill">霸體重裝怪獸</span>
+        </button>
+        <button class="char-tab-btn" data-char="donkeykong" type="button" role="tab" id="tabDK">
+          <span class="char-avatar">🦍</span><span class="char-tab-name">東奇剛 (DK)</span><span class="char-trait-pill">霸王扛人摔殺</span>
+        </button>
+        <button class="char-tab-btn" data-char="mario" type="button" role="tab" id="tabMario">
+          <span class="char-avatar">🍄</span><span class="char-tab-name">瑪利歐 (Mario)</span><span class="char-trait-pill">全能平衡大師</span>
+        </button>
+        <button class="char-tab-btn" data-char="krool" type="button" role="tab" id="tabKrool">
+          <span class="char-avatar">🐊</span><span class="char-tab-name">庫魯魯王 (K. Rool)</span><span class="char-trait-pill">遠程霸體神回場</span>
+        </button>
+        <button class="char-tab-btn" data-char="link" type="button" role="tab" id="tabLink">
+          <span class="char-avatar">🗡️</span><span class="char-tab-name">林克 (Link)</span><span class="char-trait-pill">三重遠程壓制</span>
+        </button>
+        <button class="char-tab-btn" data-char="zelda" type="button" role="tab" id="tabZelda">
+          <span class="char-avatar">👑</span><span class="char-tab-name">塞爾達 (Zelda)</span><span class="char-trait-pill">騎士盾無敵反擊</span>
+        </button>
+        <button class="char-tab-btn" data-char="pikachu" type="button" role="tab" id="tabPikachu">
+          <span class="char-avatar">⚡</span><span class="char-tab-name">皮卡丘 (Pikachu)</span><span class="char-trait-pill">高機動落雷牽制</span>
+        </button>
+        <button class="char-tab-btn" data-char="luigi" type="button" role="tab" id="tabLuigi">
+          <span class="char-avatar">👻</span><span class="char-tab-name">路易吉 (Luigi)</span><span class="char-trait-pill">綠導彈暴擊摔殺</span>
+        </button>
+        <button class="char-tab-btn" data-char="pyra" type="button" role="tab" id="tabPyra">
+          <span class="char-avatar">🔥</span><span class="char-tab-name">焰 / 光 (Pyra/Mythra)</span><span class="char-trait-pill">長劍大範圍擊飛</span>
+        </button>
+      </div>
+
+      <div class="char-detail-stage" id="charDetailStage">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+    </section>
+
+    <!-- STAGE 2 · Section 6: Interactive Virtual Switch Controller Lab -->
+    <section class="section-container split-panel" id="gamepadSimulator" data-panel-id="gamepadSimulator">
+      <div class="section-header">
+        <div class="section-tag-badge stage-lv2">STAGE 2 · 即時試按台</div>
+        <h2 class="section-heading">單支橫握 Joy-Con 即時試按台</h2>
+        <p class="section-subtitle">拖曳左搖桿或直接點擊手把按鍵（桌機可用 WASD＋J攻/K必/Space跳/L盾/U抓），立刻看到招式與手感提醒！</p>
+      </div>
+
+      <div class="sim-toolbar">
+        <div class="sim-state-switch" role="group" aria-label="角色所在位置狀態切換">
+          <span class="sim-toolbar-label">角色狀態：</span>
+          <button type="button" class="sim-state-btn active" data-state="ground" id="btnStateGround">🏃 地面 (Ground)</button>
+          <button type="button" class="sim-state-btn" data-state="air" id="btnStateAir">🪂 空中 (Air)</button>
+        </div>
+
+        <div class="sim-presets-bar">
+          <span class="sim-toolbar-label">⚡ 快速試按：</span>
+          <button type="button" class="sim-preset-btn" data-preset="dash_a">🚀 衝刺攻擊</button>
+          <button type="button" class="sim-preset-btn" data-preset="shorthop_a">⚡ 跳+A 短跳</button>
+          <button type="button" class="sim-preset-btn" data-preset="up_b">🪂 ↑+B 回場</button>
+          <button type="button" class="sim-preset-btn" data-preset="shield_grab">🛡️ SR+A 盾抓</button>
+          <button type="button" class="sim-preset-btn" data-preset="tech">🧱 撞牆按SR受身</button>
+        </div>
+      </div>
+
+      <div class="switch-controller-deck single-joycon-deck" id="switchControllerDeck">
+        <div class="joycon-wing left-wing">
+          <div class="wing-shoulder-row">
+            <button type="button" class="shoulder-btn btn-l-grab" id="vcBtnGrab" data-act="grab" title="按 SL 抓住/抓投 (鍵盤 U)">
+              <span class="sh-key">SL (左上肩鍵)</span>
+              <span class="sh-label">🤼 抓住 (破防)</span>
+            </button>
+          </div>
+
+          <div class="wing-body">
+            <div class="stick-module-title">
+              <span>搖桿 (上下左右移動)</span>
+              <span class="stick-live-readout" id="leftStickReadout">⚪ 原地 (Neutral)</span>
+            </div>
+
+            <div class="analog-stick-stage">
+              <button type="button" class="dir-hotspot up" data-dir="up" title="推上 (▲) / 鍵盤 W">▲</button>
+              <button type="button" class="dir-hotspot left" data-dir="side-left" title="推左 (◀) / 鍵盤 A">◀</button>
+              <button type="button" class="dir-hotspot right" data-dir="side-right" title="推右 (▶) / 鍵盤 D">▶</button>
+              <button type="button" class="dir-hotspot down" data-dir="down" title="推下 (▼) / 鍵盤 S">▼</button>
+
+              <div class="analog-well" id="leftAnalogWell" role="slider" aria-label="Joy-Con 搖桿，可拖曳推向各方向">
+                <div class="analog-crosshair"></div>
+                <div class="analog-knob" id="leftAnalogKnob"><div class="knob-inner-ring"></div></div>
+              </div>
+            </div>
+
+            <div class="stick-quick-controls">
+              <button type="button" class="stick-mini-btn active" data-dir="neutral" id="btnDirNeutral">⚪ 回正 (原地)</button>
+              <button type="button" class="stick-mini-btn" data-dir="dash" id="btnDirDash">🏃 快推到底 (跑步)</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="controller-center-bridge">
+          <div class="bridge-screen">
+            <div class="bridge-led-row">
+              <span class="led-dot on"></span><span class="led-dot"></span><span class="led-dot"></span><span class="led-dot"></span>
+            </div>
+            <div class="bridge-status-tag" id="bridgeStatusTag">GROUND</div>
+            <div class="bridge-combo-preview" id="bridgeComboPreview">原地 ＋ 🅰️</div>
+            <div class="bridge-kbd-hint">⌨️ 鍵盤：WASD方向・J攻・K必・Space跳・L盾・U抓</div>
+          </div>
+        </div>
+
+        <div class="joycon-wing right-wing">
+          <div class="wing-shoulder-row">
+            <button type="button" class="shoulder-btn btn-zr-shield" id="vcBtnShield" data-act="shield" title="按 SR 防護罩/閃避/受身 (鍵盤 L)">
+              <span class="sh-key">SR (右上肩鍵)</span>
+              <span class="sh-label">🛡️ 防護罩 / 受身</span>
+            </button>
+          </div>
+
+          <div class="wing-body right-body">
+            <div class="stick-module-title">
+              <span>右側四按鍵 (Joy-Con 橫握)</span>
+              <span class="stick-live-readout red" id="rightActionReadout">🅰️ 攻擊 (右鍵)</span>
+            </div>
+
+            <div class="abxy-diamond-pad">
+              <button type="button" class="face-btn btn-x" data-act="jump" id="vcBtnX" title="按上鍵跳躍 (鍵盤 Space)">
+                <span class="f-letter">▲</span><span class="f-sub">跳躍</span>
+              </button>
+              <div class="abxy-mid-row">
+                <button type="button" class="face-btn btn-y" data-act="jump" id="vcBtnY" title="按左鍵跳躍">
+                  <span class="f-letter">◀</span><span class="f-sub">跳躍</span>
+                </button>
+                <div class="abxy-hub"></div>
+                <button type="button" class="face-btn btn-a active" data-act="a" id="vcBtnA" title="按右鍵 A 攻擊 (鍵盤 J)">
+                  <span class="f-letter">A</span><span class="f-sub">攻擊</span>
+                </button>
+              </div>
+              <button type="button" class="face-btn btn-b" data-act="b" id="vcBtnB" title="按下鍵 B 必殺技 (鍵盤 K)">
+                <span class="f-letter">B</span><span class="f-sub">必殺</span>
+              </button>
+            </div>
+
+            <div class="right-lower-deck">
+              <button type="button" class="macro-shorthop-btn" id="vcBtnShortHopA" data-act="shorthop_a" title="同時按下跳躍與 A 鍵">
+                ⚡ 跳 ＋ A 同按<br><small>(自動短跳空攻)</small>
+              </button>
+
+              <div class="cstick-box" title="單支 Joy-Con 猛擊：方向猛推 ＋ A 同時按 (鍵盤方向鍵)">
+                <div class="cstick-label">猛擊 (猛推＋A)</div>
+                <div class="cstick-well" id="rightCStickWell">
+                  <button type="button" class="c-dir up" data-cdir="up" title="上猛擊 (↑+A同按)">▲</button>
+                  <button type="button" class="c-dir left" data-cdir="side" title="橫猛擊 (←+A同按)">◀</button>
+                  <button type="button" class="c-dir right" data-cdir="side" title="橫猛擊 (→+A同按)">▶</button>
+                  <button type="button" class="c-dir down" data-cdir="down" title="下猛擊 (↓+A同按)">▼</button>
+                  <div class="cstick-knob" id="rightCStickKnob">💥</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sim-result-card" id="simResultCard">
+        <div class="sim-result-header">
+          <div class="sim-combo-badge" id="simComboBadge">
+            <span class="sim-state-tag">🏃 地面</span>
+            <span class="key-cap small stick">原地</span>
+            <span class="combo-plus">＋</span>
+            <span class="key-cap small btn-a">🅰️ A 鍵</span>
+          </div>
+          <div class="sim-move-category" id="simCategory">普通普攻系列 (Normal Attack)</div>
+        </div>
+        <h3 class="sim-move-name" id="simMoveName">原地連續百烈拳 / 刺拳 (Jab)</h3>
+        <p class="sim-move-desc" id="simMoveDesc">連續點按 A 鍵發動的近身快速刺拳。發生速度全遊戲最快，用來打斷對手前衝與防身最有效！</p>
+        <div class="sim-bounce-prompt-bar" id="simBouncePromptBar">
+          <span class="prompt-bar-label">🕹️ 建議手把按法跳動指引：</span>
+          <div class="prompt-bar-keys" id="simBounceKeys">
+            <span class="key-cap small stick">原地 (不推)</span>
+            <span class="combo-plus">＋</span>
+            <span class="key-cap small btn-a">🅰️ 連點</span>
+          </div>
+        </div>
+        <div class="sim-pro-tip" id="simProTip">
+          💡 <strong>實戰操作提示：</strong>近距離肉搏陷入膠著時，先按兩下 A 出刺拳搶節奏，對手通常無法招架。
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Smash-Style Bottom Progress & Section Switcher Dock (參考大亂鬥官網風格進度切換列) -->
+  <nav class="smash-bottom-dock" id="smashBottomDock" aria-label="章節進度與快速切換列">
+    <div class="smash-dock-progress-row">
+      <div class="smash-dock-progress-track">
+        <div class="smash-dock-progress-fill" id="smashDockProgressFill" style="width: 11.1%;"></div>
+      </div>
+      <span class="smash-dock-step-badge" id="smashDockStepText">1 / 9 · 玩法介紹</span>
+    </div>
+
+    <div class="smash-dock-bar">
+      <button type="button" class="smash-dock-arrow" id="smashDockPrev" aria-label="上一區塊" title="上一區塊">◀</button>
+
+      <div class="smash-dock-strip" id="smashDockStrip">
+        <button type="button" class="smash-dock-tile active" data-target="heroTopRules">
+          <span class="smash-tile-icon">📖</span>
+          <span class="smash-tile-label">玩法介紹</span>
+        </button>
+        <button type="button" class="smash-dock-tile" data-target="heroControlsOverview">
+          <span class="smash-tile-icon">🎮</span>
+          <span class="smash-tile-label">操作按鍵</span>
+        </button>
+        <button type="button" class="smash-dock-tile" data-target="heroSmashGuide">
+          <span class="smash-tile-icon">💥</span>
+          <span class="smash-tile-label">猛擊擊飛</span>
+        </button>
+        <button type="button" class="smash-dock-tile" data-target="rulesSection">
+          <span class="smash-tile-icon">🛡️</span>
+          <span class="smash-tile-label">規則剋制</span>
+        </button>
+        <button type="button" class="smash-dock-tile" data-target="recoveryGuide">
+          <span class="smash-tile-icon">🪂</span>
+          <span class="smash-tile-label">保命回場</span>
+        </button>
+        <button type="button" class="smash-dock-tile" data-target="attackMastery">
+          <span class="smash-tile-icon">👊</span>
+          <span class="smash-tile-label">A鍵普攻</span>
+        </button>
+        <button type="button" class="smash-dock-tile" data-target="universalMoves">
+          <span class="smash-tile-icon">⚡</span>
+          <span class="smash-tile-label">5大神招</span>
+        </button>
+        <button type="button" class="smash-dock-tile" data-target="charactersSection">
+          <span class="smash-tile-icon">⭐</span>
+          <span class="smash-tile-label">推薦角色</span>
+        </button>
+        <button type="button" class="smash-dock-tile" data-target="gamepadSimulator">
+          <span class="smash-tile-icon">🕹️</span>
+          <span class="smash-tile-label">手把試按</span>
+        </button>
+      </div>
+
+      <button type="button" class="smash-dock-arrow" id="smashDockNext" aria-label="下一區塊" title="下一區塊">▶</button>
+    </div>
+  </nav>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3>SMASH PRO GUIDE</h3>
+        <p>Switch《任天堂明星大亂鬥 特別版》新手即時教學與速查手冊</p>
+      </div>
+      <p class="footer-disclaimer">
+        本站為玩家同好社群推廣與新手教學非官方指南。遊戲版權為 Nintendo / HAL Laboratory, Inc. 所有。
+      </p>
+      <div class="footer-back-top">
+        <a href="#hero" class="btn-back-top">回到頁首 ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" role="status"></div>
+
+  <!-- Scripts -->
+  <script src="./script.js"></script>
+</body>
+</html>
