@@ -12,13 +12,36 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&family=Outfit:wght@600;800;900&display=swap" rel="stylesheet">
   
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style.css?v=20261112">
 </head>
 <body class="panel-mode">
 
   <!-- Navigation Header -->
   <header class="navbar" id="navbar">
     <div class="nav-container">
+      <!-- Top-Left Collapsible Menu (收納次要功能減少畫面雜亂) -->
+      <div class="topleft-menu-wrap" id="topLeftMenuWrap">
+        <button type="button" class="topleft-menu-btn" id="topLeftMenuBtn" aria-expanded="false" aria-controls="topLeftMenuDropdown" title="開啟更多功能選單">
+          <span class="topleft-menu-icon" aria-hidden="true">☰</span>
+          <span class="topleft-menu-text">選單</span>
+        </button>
+        <div class="topleft-menu-dropdown" id="topLeftMenuDropdown" role="menu" aria-label="進階與輔助功能">
+          <div class="topleft-menu-header">進階與輔助功能</div>
+          <a href="#charactersSection" class="topleft-menu-item" role="menuitem">
+            <span class="tlm-icon">⭐</span>
+            <span class="tlm-label">推薦角色</span>
+          </a>
+          <a href="#gamepadSimulator" class="topleft-menu-item" role="menuitem">
+            <span class="tlm-icon">🕹️</span>
+            <span class="tlm-label">手把試按</span>
+          </a>
+          <a href="#rulesSection" class="topleft-menu-item" role="menuitem">
+            <span class="tlm-icon">🛡️</span>
+            <span class="tlm-label">規則剋制</span>
+          </a>
+        </div>
+      </div>
+
       <a href="#hero" class="nav-brand" aria-label="大亂鬥教學首頁">
         <div class="brand-logo-icon">
           <!-- Smash Bros Symbol Crosshair SVG -->
@@ -34,33 +57,27 @@
         </div>
       </a>
 
-      <!-- Desktop Nav Links (由淺至深三階段排列) -->
+      <!-- Desktop Nav Links (精簡主線順序) -->
       <nav class="nav-links" id="navLinks">
         <a href="#heroTopRules" class="nav-item active">玩法介紹</a>
         <a href="#heroControlsOverview" class="nav-item">操作按鍵</a>
-        <a href="#heroSmashGuide" class="nav-item">猛擊擊飛</a>
-        <a href="#rulesSection" class="nav-item">規則</a>
-        <a href="#recoveryGuide" class="nav-item">回場</a>
         <a href="#attackMastery" class="nav-item">A鍵普攻</a>
+        <a href="#recoveryGuide" class="nav-item">保命回場</a>
+        <a href="#heroSmashGuide" class="nav-item">猛擊擊飛</a>
         <a href="#universalMoves" class="nav-item">5大神招</a>
-        <a href="#charactersSection" class="nav-item">推薦角色</a>
-        <a href="#gamepadSimulator" class="nav-item">手把試按</a>
       </nav>
     </div>
   </header>
 
-  <!-- Mobile Quick Sub-nav Bar (手機專屬由淺至深導航) -->
+  <!-- Mobile Quick Sub-nav Bar -->
   <nav class="mobile-subnav-bar" id="mobileSubnav" aria-label="手機快速分類選單">
     <div class="mobile-subnav-scroll">
       <a href="#heroTopRules" class="subnav-pill active">📖 玩法介紹</a>
-      <a href="#heroControlsOverview" class="subnav-pill">🎮 按鍵圖示</a>
-      <a href="#heroSmashGuide" class="subnav-pill">💥 猛擊擊飛</a>
-      <a href="#rulesSection" class="subnav-pill">🟢 核心規則</a>
-      <a href="#recoveryGuide" class="subnav-pill">🪂 保命回場</a>
+      <a href="#heroControlsOverview" class="subnav-pill">🎮 操作按鍵</a>
       <a href="#attackMastery" class="subnav-pill">👊 A鍵普攻</a>
+      <a href="#recoveryGuide" class="subnav-pill">🪂 保命回場</a>
+      <a href="#heroSmashGuide" class="subnav-pill">💥 猛擊擊飛</a>
       <a href="#universalMoves" class="subnav-pill">⚡ 5大神招</a>
-      <a href="#charactersSection" class="subnav-pill">⭐ 推薦角色</a>
-      <a href="#gamepadSimulator" class="subnav-pill">🕹️ 即時試按</a>
     </div>
   </nav>
 
@@ -317,11 +334,11 @@
                 <div class="ops-style-label">操作樣式：先推方向 / 跑步 ＋ 點按 A</div>
                 <div class="ops-visual-row">
                   <div class="ops-stick-schematic red-stick">
-                    <span class="stick-dir dir-up" title="上推：對空">↑ 上</span>
-                    <span class="stick-dir dir-left" title="左推：向左">←</span>
+                    <span class="stick-dir dir-up" title="上推：上攻擊">⏶ 上攻擊</span>
+                    <span class="stick-dir dir-left" title="左推：橫向攻擊">⏴ 橫向攻擊</span>
                     <div class="stick-core-knob">搖桿</div>
-                    <span class="stick-dir dir-right active-dir" title="右推：前刺 / 衝刺">→</span>
-                    <span class="stick-dir dir-down" title="下推：下掃">↓ 下</span>
+                    <span class="stick-dir dir-right active-dir" title="右推：橫向攻擊 / 衝刺">橫向攻擊 ⏵</span>
+                    <span class="stick-dir dir-down" title="下推：下攻擊">⏷ 下攻擊</span>
                   </div>
                   <span class="ops-plus-sign">＋</span>
                   <div class="ops-key-badge red-key">
@@ -358,11 +375,11 @@
                 <div class="ops-style-label">操作樣式：撥定四方向 ＋ 點按 B</div>
                 <div class="ops-visual-row">
                   <div class="ops-stick-schematic blue-stick">
-                    <span class="stick-dir dir-up active-dir" title="上推 ＋ B：救命回場">↑ 回場</span>
-                    <span class="stick-dir dir-left" title="橫推 ＋ B：突進或投擲">←</span>
+                    <span class="stick-dir dir-up active-dir" title="上推 ＋ B：救命回場">⏶ 回場技</span>
+                    <span class="stick-dir dir-left" title="橫推 ＋ B：突進或投擲">⏴ 橫向技</span>
                     <div class="stick-core-knob">搖桿</div>
-                    <span class="stick-dir dir-right" title="橫推 ＋ B：突進或投擲">→</span>
-                    <span class="stick-dir dir-down" title="下推 ＋ B：反制特技">↓ 特技</span>
+                    <span class="stick-dir dir-right" title="橫推 ＋ B：突進或投擲">橫向技 ⏵</span>
+                    <span class="stick-dir dir-down" title="下推 ＋ B：反制特技">⏷ 特技</span>
                   </div>
                   <span class="ops-plus-sign">＋</span>
                   <div class="ops-key-badge blue-key">
@@ -1084,8 +1101,8 @@
         <button class="char-tab-btn" data-char="luigi" type="button" role="tab" id="tabLuigi">
           <span class="char-avatar">👻</span><span class="char-tab-name">路易吉 (Luigi)</span><span class="char-trait-pill">綠導彈暴擊摔殺</span>
         </button>
-        <button class="char-tab-btn" data-char="pyra" type="button" role="tab" id="tabPyra">
-          <span class="char-avatar">🔥</span><span class="char-tab-name">焰 / 光 (Pyra/Mythra)</span><span class="char-trait-pill">長劍大範圍擊飛</span>
+        <button class="char-tab-btn" data-char="yoshi" type="button" role="tab" id="tabYoshi">
+          <span class="char-avatar">🥚</span><span class="char-tab-name">悠喜 / 耀西 (Yoshi)</span><span class="char-trait-pill">會變成蛋蛋</span>
         </button>
       </div>
 
@@ -1248,9 +1265,9 @@
   <nav class="smash-bottom-dock" id="smashBottomDock" aria-label="章節進度與快速切換列">
     <div class="smash-dock-progress-row">
       <div class="smash-dock-progress-track">
-        <div class="smash-dock-progress-fill" id="smashDockProgressFill" style="width: 11.1%;"></div>
+        <div class="smash-dock-progress-fill" id="smashDockProgressFill" style="width: 16.7%;"></div>
       </div>
-      <span class="smash-dock-step-badge" id="smashDockStepText">1 / 9 · 玩法介紹</span>
+      <span class="smash-dock-step-badge" id="smashDockStepText">1 / 6 · 玩法介紹</span>
     </div>
 
     <div class="smash-dock-bar">
@@ -1265,33 +1282,21 @@
           <span class="smash-tile-icon">🎮</span>
           <span class="smash-tile-label">操作按鍵</span>
         </button>
-        <button type="button" class="smash-dock-tile" data-target="heroSmashGuide">
-          <span class="smash-tile-icon">💥</span>
-          <span class="smash-tile-label">猛擊擊飛</span>
-        </button>
-        <button type="button" class="smash-dock-tile" data-target="rulesSection">
-          <span class="smash-tile-icon">🛡️</span>
-          <span class="smash-tile-label">規則剋制</span>
+        <button type="button" class="smash-dock-tile" data-target="attackMastery">
+          <span class="smash-tile-icon">👊</span>
+          <span class="smash-tile-label">A鍵普攻</span>
         </button>
         <button type="button" class="smash-dock-tile" data-target="recoveryGuide">
           <span class="smash-tile-icon">🪂</span>
           <span class="smash-tile-label">保命回場</span>
         </button>
-        <button type="button" class="smash-dock-tile" data-target="attackMastery">
-          <span class="smash-tile-icon">👊</span>
-          <span class="smash-tile-label">A鍵普攻</span>
+        <button type="button" class="smash-dock-tile" data-target="heroSmashGuide">
+          <span class="smash-tile-icon">💥</span>
+          <span class="smash-tile-label">猛擊擊飛</span>
         </button>
         <button type="button" class="smash-dock-tile" data-target="universalMoves">
           <span class="smash-tile-icon">⚡</span>
           <span class="smash-tile-label">5大神招</span>
-        </button>
-        <button type="button" class="smash-dock-tile" data-target="charactersSection">
-          <span class="smash-tile-icon">⭐</span>
-          <span class="smash-tile-label">推薦角色</span>
-        </button>
-        <button type="button" class="smash-dock-tile" data-target="gamepadSimulator">
-          <span class="smash-tile-icon">🕹️</span>
-          <span class="smash-tile-label">手把試按</span>
         </button>
       </div>
 
@@ -1319,6 +1324,6 @@
   <div class="toast" id="toast" role="status"></div>
 
   <!-- Scripts -->
-  <script src="./script.js"></script>
+  <script src="./script.js?v=20261112"></script>
 </body>
 </html>

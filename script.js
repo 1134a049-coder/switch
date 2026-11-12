@@ -173,38 +173,38 @@
       ],
       warning: '⚠️ <strong>皮卡丘缺點：</strong>電光一閃需要練習方向手感，如果撞到舞台下方牆壁可能會滑落，多去訓練模式試幾次方向。'
     },
-    pyra: {
-      name: '焰 / 光 (Pyra / Mythra)',
-      tagline: '巨大光刃劍氣 × 焰之烈火擊飛 × 光之閃電快攻',
-      avatar: '🔥',
-      weight: '中量雙刀流',
-      jumpCount: '2 次常規跳躍',
-      bestKillMove: '焰：橫向必殺旋輪 / 猛擊大劍',
-      summary: 'DLC 頂級人氣角色，自帶「焰」與「光」隨時切換（下B）。光擁有全遊戲頂級的疾速出招，焰則擁有誇張的巨劍範圍與早殺力量，新手拿著大劍揮舞爽快無比！',
+    yoshi: {
+      name: '悠喜 / 耀西 (Yoshi)',
+      tagline: '吞敵變蛋蛋 × 蛋殼滾動衝撞 × 超高霸體二段跳',
+      avatar: '🥚',
+      weight: '中重量級恐龍 (空中速度超快)',
+      jumpCount: '2 次超高跳躍 (二段跳自帶霸體！)',
+      bestKillMove: '空中前踢擊落 / 猛推方向＋A 猛擊 / 下 B 重壓',
+      summary: '免付費就能玩到的元老級神角！最大特色就是能把對手或自己「變成蛋蛋」：防禦 SR 直接變蛋殼不怕被破盾、按 B 直接把敵人吞進蛋裡掉出場外，二段跳還自帶霸體不怕被打斷，新手超好上手！',
       moves: [
         {
-          tag: '大範圍烈火旋輪',
-          name: '焰：橫必殺（➡️ ＋ 🅱️ 燃燒烈輪）',
-          combo: ['➡️', '＋', '🅱️ (焰)'],
-          desc: '將手中的巨劍化為旋轉燃燒的飛火輪擲向前方，在前方持續高速旋轉絞殺對手，覆蓋超廣面積！',
-          tip: '站在安全距離直接扔出旋火輪，對手被定在火輪裡動彈不得，你甚至可以走過去蓄力大招接連段！'
+          tag: '破防變蛋陰招',
+          name: '普通必殺技（🅱️ 生吞變蛋）',
+          combo: ['🅱️ (下鍵)'],
+          desc: '伸出長舌無視對手防護罩把人吞進肚子，直接打包成一顆蛋彈出來！在懸崖邊把對手變成蛋，對方常常來不及掙脫直接摔死！',
+          tip: '看到對手一直舉盾，直接靠近按 B 吞掉變成蛋，比抓投更好笑又好用！'
         },
         {
-          tag: '光速近身壓制',
-          name: '光：橫必殺（➡️ ＋ 🅱️ 光子狂斬）',
-          combo: ['➡️', '＋', '🅱️ (光)'],
-          desc: '光瞬間化為數道幻影向前突進狂斬，判定範圍極長，對手防備不及直接被切開。',
-          tip: '對戰前中期先切成「光」用快刀蹭 % 數；等對手到 80% 換成「焰」一劍砍飛對手！'
+          tag: '變成蛋蛋滾動衝撞',
+          name: '橫必殺技（➡️ ＋ 🅱️ 滾蛋衝鋒）',
+          combo: ['➡️', '＋', '🅱️'],
+          desc: '悠喜自己縮進蛋殼裡向前高速滾動撞飛敵人，中途還能靠方向鍵微調加速或跳起！',
+          tip: '混戰時直接變蛋滾進人群撞飛大家，再按一下 B 就能提早解除蛋殼！'
         },
         {
-          tag: '雙人隨時切換',
-          name: '下必殺技（↓ ＋ 🅱️ 角色切換）',
-          combo: ['↓', '＋', '🅱️'],
-          desc: '在「光（速度型）」與「焰（怪力型）」之間無縫變身，切換瞬間短暫無敵。',
-          tip: '新手起手可以直接常駐「焰（紅髮）」，光靠大劍的橫猛擊和橫B旋輪就能橫掃對局！'
+          tag: '護盾變蛋＆二段跳霸體',
+          name: '長按 SR 蛋殼盾 ＋ 空中二段跳',
+          combo: ['SR 護盾', '＋', '⏴/⏶ 空中二段跳'],
+          desc: '長按 SR 會把自己包成一顆圓滾滾的蛋蛋防禦（盾不會變小漏出破綻）；被打出場外時，二段跳高度驚人且途中被打不會停下！',
+          tip: '悠喜的「↑＋B」只會丟蛋不會飛高，回場全靠超強二段跳直接跳回舞台！'
         }
       ],
-      warning: '⚠️ <strong>焰與光缺點：</strong>回歸技（Up-B）的垂直上升高度中規中矩，掉下懸崖時記得保留二段跳再按上B。'
+      warning: '⚠️ <strong>悠喜回場注意：</strong>悠喜的 ↑＋B 是「向上丟蛋」而不是升龍飛高，所以飛出場外務必靠超高「空中二段跳（⏴/⏶）」直接跳回舞台！'
     },
     donkeykong: {
       name: '東奇剛 / DK (Donkey Kong)',
@@ -1864,7 +1864,7 @@
       .replace(/"/g, '&quot;');
   }
 
-  // Split Panel Switcher + Bottom Smash Progress Bar + Top Nav Sync
+  // Split Panel Switcher + Bottom Smash Progress Bar + Top Nav + Top-Left Menu Sync
   function initSplitPanelSystem() {
     const panels = Array.from(document.querySelectorAll('.split-panel[data-panel-id]'));
     const heroSection = document.getElementById('hero');
@@ -1877,17 +1877,49 @@
     const progressFill = document.getElementById('smashDockProgressFill');
     const stepText = document.getElementById('smashDockStepText');
 
+    const topLeftMenuWrap = document.getElementById('topLeftMenuWrap');
+    const topLeftMenuBtn = document.getElementById('topLeftMenuBtn');
+    const topLeftMenuItems = Array.from(document.querySelectorAll('#topLeftMenuDropdown .topleft-menu-item'));
+
     if (!panels.length) return;
 
-    const panelIds = panels.map(p => p.dataset.panelId);
+    const allPanelIds = panels.map(p => p.dataset.panelId);
+    const mainPanelIds = dockTiles.length
+      ? dockTiles.map(t => t.dataset.target).filter(id => allPanelIds.includes(id))
+      : allPanelIds;
     const heroPanelIds = new Set(['heroTopRules', 'heroControlsOverview', 'heroSmashGuide']);
-    let activeIdx = 0;
+    let activeMainIdx = 0;
+
+    function closeTopLeftMenu() {
+      if (!topLeftMenuWrap || !topLeftMenuBtn) return;
+      topLeftMenuWrap.classList.remove('open');
+      topLeftMenuBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    if (topLeftMenuBtn && topLeftMenuWrap) {
+      topLeftMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = topLeftMenuWrap.classList.toggle('open');
+        topLeftMenuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!topLeftMenuWrap.contains(e.target)) {
+          closeTopLeftMenu();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeTopLeftMenu();
+      });
+    }
 
     function switchToPanel(targetId, scrollToTop = true) {
       if (targetId === 'hero') targetId = 'heroTopRules';
-      const idx = panelIds.indexOf(targetId);
-      if (idx === -1) return;
-      activeIdx = idx;
+      if (!allPanelIds.includes(targetId)) return;
+
+      const mainIdx = mainPanelIds.indexOf(targetId);
+      if (mainIdx !== -1) activeMainIdx = mainIdx;
 
       panels.forEach(p => {
         p.classList.toggle('active-panel', p.dataset.panelId === targetId);
@@ -1900,6 +1932,19 @@
       navLinks.forEach(link => {
         link.classList.toggle('active', link.getAttribute('href') === `#${targetId}`);
       });
+
+      let activeMenuLabel = '';
+      topLeftMenuItems.forEach(item => {
+        const match = item.getAttribute('href') === `#${targetId}`;
+        item.classList.toggle('active', match);
+        if (match) {
+          const labelEl = item.querySelector('.tlm-label');
+          if (labelEl) activeMenuLabel = labelEl.textContent.trim();
+        }
+      });
+      if (topLeftMenuBtn) {
+        topLeftMenuBtn.classList.toggle('has-active', Boolean(activeMenuLabel));
+      }
 
       subnavPills.forEach(pill => {
         const match = pill.getAttribute('href') === `#${targetId}`;
@@ -1927,11 +1972,20 @@
         }
       });
 
-      const pct = Math.round(((idx + 1) / panelIds.length) * 1000) / 10;
-      if (progressFill) progressFill.style.width = `${pct}%`;
-      if (stepText) stepText.textContent = `${idx + 1} / ${panelIds.length}${activeLabel ? ' · ' + activeLabel : ''}`;
-      if (dockPrev) dockPrev.disabled = idx <= 0;
-      if (dockNext) dockNext.disabled = idx >= panelIds.length - 1;
+      if (mainIdx !== -1) {
+        const pct = Math.round(((mainIdx + 1) / mainPanelIds.length) * 1000) / 10;
+        if (progressFill) progressFill.style.width = `${pct}%`;
+        if (stepText) stepText.textContent = `${mainIdx + 1} / ${mainPanelIds.length}${activeLabel ? ' · ' + activeLabel : ''}`;
+        if (dockPrev) dockPrev.disabled = mainIdx <= 0;
+        if (dockNext) dockNext.disabled = mainIdx >= mainPanelIds.length - 1;
+      } else {
+        if (progressFill) progressFill.style.width = '100%';
+        if (stepText) stepText.textContent = `選單功能${activeMenuLabel ? ' · ' + activeMenuLabel : ''}`;
+        if (dockPrev) dockPrev.disabled = false;
+        if (dockNext) dockNext.disabled = true;
+      }
+
+      closeTopLeftMenu();
 
       if (scrollToTop) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1951,13 +2005,21 @@
 
     if (dockPrev) {
       dockPrev.addEventListener('click', () => {
-        if (activeIdx > 0) switchToPanel(panelIds[activeIdx - 1], true);
+        if (mainPanelIds.length === 0) return;
+        const currentVisible = panels.find(p => p.classList.contains('active-panel'))?.dataset.panelId;
+        if (!mainPanelIds.includes(currentVisible)) {
+          switchToPanel(mainPanelIds[activeMainIdx] || mainPanelIds[0], true);
+        } else if (activeMainIdx > 0) {
+          switchToPanel(mainPanelIds[activeMainIdx - 1], true);
+        }
       });
     }
 
     if (dockNext) {
       dockNext.addEventListener('click', () => {
-        if (activeIdx < panelIds.length - 1) switchToPanel(panelIds[activeIdx + 1], true);
+        if (activeMainIdx < mainPanelIds.length - 1) {
+          switchToPanel(mainPanelIds[activeMainIdx + 1], true);
+        }
       });
     }
 
@@ -1969,7 +2031,7 @@
       if (!href || href === '#') return;
       const rawId = href.slice(1);
       const targetId = rawId === 'hero' ? 'heroTopRules' : rawId;
-      if (panelIds.includes(targetId)) {
+      if (allPanelIds.includes(targetId)) {
         e.preventDefault();
         switchToPanel(targetId, true);
       }
@@ -1977,7 +2039,7 @@
 
     // Respect initial URL hash if present
     const initialHash = window.location.hash ? window.location.hash.slice(1) : 'heroTopRules';
-    switchToPanel(panelIds.includes(initialHash) ? initialHash : 'heroTopRules', false);
+    switchToPanel(allPanelIds.includes(initialHash) ? initialHash : 'heroTopRules', false);
   }
 
   // Bootstrap on DOM ready
